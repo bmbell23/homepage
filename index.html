@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Forge Freedom - Building digital freedom through code and creativity">
-    <title>Forge Freedom</title>
+    <meta name="description" content="The Freedom Forge - Forging a path to financial freedom through creativity, entrepreneurship, and personal growth">
+    <title>The Freedom Forge | Forge Your Freedom</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h1>Forge Freedom</h1>
+                    <img src="assets/images/logo.png" alt="The Freedom Forge Logo" class="logo-img">
+                    <span class="logo-text">The Freedom Forge</span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#shop">Shop</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -27,34 +33,157 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">Building Digital Freedom</h2>
-                    <p class="hero-subtitle">Through code, creativity, and continuous learning</p>
-                    <a href="#projects" class="cta-button">Explore Projects</a>
+                    <div class="hero-logo">
+                        <img src="assets/images/logo.png" alt="The Freedom Forge">
+                    </div>
+                    <h1 class="hero-title">Forge Your Freedom</h1>
+                    <p class="hero-subtitle">Building financial independence through creativity, entrepreneurship, and continuous growth</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="cta-button primary">Explore My Journey</a>
+                        <a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank" class="cta-button secondary">Visit My Shop</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@thefreedomforge" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank" aria-label="Etsy">
+                            <i class="fab fa-etsy"></i>
+                        </a>
+                        <a href="mailto:brandon@forge-freedom.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2>About</h2>
-                <p>Welcome to Forge Freedom - a space dedicated to building meaningful digital experiences and exploring the intersection of technology and personal growth.</p>
+                <h2>About The Forge</h2>
+                <div class="about-content">
+                    <p class="lead">Welcome to The Freedom Forge - where I'm actively forging my path to financial independence and personal mastery.</p>
+                    <p>This is my digital workshop where I document my journey of learning, creating, and building multiple streams of income. From digital art and writing to e-commerce and fitness, I'm exploring diverse paths to create a life of freedom and purpose.</p>
+                    <p>Every project here represents a step toward becoming the architect of my own life - mastering new skills, building sustainable income, and sharing the journey along the way.</p>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>Projects</h2>
+                <h2>Current Projects</h2>
                 <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Great Reads</h3>
-                        <p>A personal reading tracker to manage and analyze your reading journey.</p>
-                        <a href="https://great-reads.com" class="project-link" target="_blank">Visit Project →</a>
-                    </div>
                     
-                    <!-- Add more project cards here as you build them -->
+                    <div class="project-card active">
+                        <div class="project-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Great Reads</h3>
+                        <p>Personal reading tracker to manage and analyze my reading journey. Built with Python and FastAPI.</p>
+                        <div class="project-tags">
+                            <span class="tag">Live</span>
+                            <span class="tag">Web App</span>
+                        </div>
+                        <a href="https://great-reads.com" class="project-link" target="_blank">
+                            Visit Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
                     <div class="project-card coming-soon">
-                        <h3>More Coming Soon</h3>
-                        <p>Stay tuned for more exciting projects!</p>
+                        <div class="project-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Writing</h3>
+                        <p>Short stories, creative writing, and narrative experiments. Exploring storytelling as a craft and creative outlet.</p>
+                        <div class="project-tags">
+                            <span class="tag">Coming Soon</span>
+                            <span class="tag">Creative</span>
+                        </div>
+                        <a href="/writing" class="project-link">
+                            Coming Soon <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card coming-soon">
+                        <div class="project-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Digital Art</h3>
+                        <p>Learning to draw and create digital art. Documenting my artistic journey from beginner to skilled creator.</p>
+                        <div class="project-tags">
+                            <span class="tag">Coming Soon</span>
+                            <span class="tag">Art</span>
+                        </div>
+                        <a href="/art" class="project-link">
+                            Coming Soon <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card coming-soon">
+                        <div class="project-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Fitness Journey</h3>
+                        <p>Weight loss progress, workout routines, and fitness insights. Tracking my transformation with data and dedication.</p>
+                        <div class="project-tags">
+                            <span class="tag">Coming Soon</span>
+                            <span class="tag">Health</span>
+                        </div>
+                        <a href="/fitness" class="project-link">
+                            Coming Soon <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card coming-soon">
+                        <div class="project-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3>Blog & Journal</h3>
+                        <p>Thoughts, reflections, and lessons learned on the journey to freedom. Public journaling and knowledge sharing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Coming Soon</span>
+                            <span class="tag">Writing</span>
+                        </div>
+                        <a href="/blog" class="project-link">
+                            Coming Soon <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card active">
+                        <div class="project-icon">
+                            <i class="fab fa-etsy"></i>
+                        </div>
+                        <h3>Etsy Shop</h3>
+                        <p>Forge Your Freedom - Creating and selling unique products. Building an e-commerce income stream.</p>
+                        <div class="project-tags">
+                            <span class="tag">Live</span>
+                            <span class="tag">E-commerce</span>
+                        </div>
+                        <a href="https://www.etsy.com/shop/forgeyourfreedom" class="project-link" target="_blank">
+                            Visit Shop <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="shop-section">
+            <div class="container">
+                <h2>Support The Journey</h2>
+                <div class="shop-content">
+                    <div class="shop-text">
+                        <h3>Visit My Etsy Shop</h3>
+                        <p>Check out unique products I'm creating and selling. Every purchase supports this journey toward freedom and helps me continue building and creating.</p>
+                        <a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank" class="cta-button primary">
+                            <i class="fab fa-etsy"></i> Shop Now
+                        </a>
+                    </div>
+                    <div class="shop-text">
+                        <h3>Follow on TikTok</h3>
+                        <p>Join me on TikTok for behind-the-scenes content, tips, and updates on all my projects and the freedom journey.</p>
+                        <a href="https://www.tiktok.com/@thefreedomforge" target="_blank" class="cta-button primary">
+                            <i class="fab fa-tiktok"></i> @thefreedomforge
+                        </a>
                     </div>
                 </div>
             </div>
@@ -63,15 +192,62 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Get In Touch</h2>
-                <p>Interested in collaborating or learning more? Reach out!</p>
-                <!-- Add contact form or links here -->
+                <p class="contact-intro">Want to collaborate, share ideas, or just say hello? I'd love to hear from you!</p>
+                <div class="contact-methods">
+                    <a href="mailto:brandon@forge-freedom.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>brandon@forge-freedom.com</p>
+                    </a>
+                    <a href="https://www.tiktok.com/@thefreedomforge" target="_blank" class="contact-card">
+                        <i class="fab fa-tiktok"></i>
+                        <h3>TikTok</h3>
+                        <p>@thefreedomforge</p>
+                    </a>
+                    <a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank" class="contact-card">
+                        <i class="fab fa-etsy"></i>
+                        <h3>Etsy</h3>
+                        <p>forgeyourfreedom</p>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Forge Freedom. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="The Freedom Forge">
+                    <p>Forging freedom, one project at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank">Etsy Shop</a></li>
+                        <li><a href="mailto:brandon@forge-freedom.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@thefreedomforge" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.etsy.com/shop/forgeyourfreedom" target="_blank" aria-label="Etsy">
+                            <i class="fab fa-etsy"></i>
+                        </a>
+                        <a href="mailto:brandon@forge-freedom.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Freedom Forge. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
