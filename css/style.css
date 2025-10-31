@@ -358,6 +358,8 @@ section h2::after {
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 1px;
+    min-height: 4.5rem;
+    line-height: 1.25;
 }
 
 .project-card p {
