@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Mobile Zoom Prevention Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 1rem;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0.5rem;
+            background: var(--dark-gray);
+        }
+        .test-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0.5rem;
+            background: var(--black);
+            color: var(--white);
+        }
+        .chat-simulation {
+            background: var(--medium-gray);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .chat-input-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 1.5rem;
+            background: var(--white);
+            color: var(--black);
+            font-size: 16px;
+        }
+        .send-button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-orange);
+            color: var(--white);
+            border: none;
+            border-radius: 1.5rem;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: var(--black);
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Zoom Prevention Test</h1>
+    <p>Test these inputs on mobile to ensure they don't cause zoom when focused:</p>
+
+    <div class="test-section">
+        <h2>1. Standard Form Inputs</h2>
+        <input type="text" class="test-input" placeholder="Text input - should not zoom">
+        <input type="email" class="test-input" placeholder="Email input - should not zoom">
+        <input type="search" class="test-input" placeholder="Search input - should not zoom">
+        <textarea class="test-input" placeholder="Textarea - should not zoom" rows="3"></textarea>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Chat Box Simulation</h2>
+        <div class="chat-simulation">
+            <p>This simulates a typical chat interface:</p>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" placeholder="Type your message here..." id="chat-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Dynamically Added Input</h2>
+        <button onclick="addDynamicInput()" style="padding: 0.5rem 1rem; margin-bottom: 1rem;">Add Dynamic Input</button>
+        <div id="dynamic-container"></div>
+    </div>
+
+    <div class="status" id="status">
+        Status: Ready for testing
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Test dynamic input creation
+        function addDynamicInput() {
+            const container = document.getElementById('dynamic-container');
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'test-input';
+            input.placeholder = 'Dynamically added input - should not zoom';
+            container.appendChild(input);
+            updateStatus('Dynamic input added');
+        }
+
+        function updateStatus(message) {
+            document.getElementById('status').textContent = `Status: ${message}`;
+        }
+
+        // Monitor input focus events
+        document.addEventListener('focusin', function(e) {
+            if (e.target.matches('input, textarea')) {
+                const fontSize = window.getComputedStyle(e.target).fontSize;
+                updateStatus(`Focused on ${e.target.placeholder || e.target.type} - Font size: ${fontSize}`);
+            }
+        });
+
+        // Log viewport changes
+        window.addEventListener('resize', function() {
+            updateStatus(`Viewport: ${window.innerWidth}x${window.innerHeight}`);
+        });
+    </script>
+</body>
+</html>

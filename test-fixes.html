@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Test Code Block and Mobile Fixes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 1rem;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0.5rem;
+        }
+        .chat-message {
+            background: var(--dark-gray);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test: Code Block Tab Spacing & Mobile Zoom Fixes</h1>
+    
+    <div class="test-section">
+        <h2>1. Code Block Tab Spacing Test</h2>
+        <p>The following code block should display with proper 2-space tab indentation:</p>
+        
+        <pre><code>function example() {
+	if (true) {
+		console.log("This should be indented with 2 spaces");
+		if (nested) {
+			console.log("This should be indented with 4 spaces");
+		}
+	}
+}</code></pre>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Chat Message Code Block Test</h2>
+        <div class="chat-message">
+            <p>Here's a code example in a chat message:</p>
+            <pre><code>const data = {
+	name: "test",
+	values: [
+		{ id: 1, active: true },
+		{ id: 2, active: false }
+	]
+};</code></pre>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Mobile Input Test</h2>
+        <p>On mobile devices, these inputs should NOT cause zoom when focused:</p>
+        
+        <form>
+            <div style="margin-bottom: 1rem;">
+                <label for="test-input">Text Input:</label><br>
+                <input type="text" id="test-input" placeholder="Type here - should not zoom on mobile"
+                       style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; font-size: 16px;">
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label for="test-textarea">Textarea (like chat input):</label><br>
+                <textarea id="test-textarea" placeholder="Type here - should not zoom on mobile"
+                          style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; min-height: 80px; font-size: 16px;"></textarea>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label for="test-email">Email Input:</label><br>
+                <input type="email" id="test-email" placeholder="email@example.com"
+                       style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; font-size: 16px;">
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label for="test-search">Search Input:</label><br>
+                <input type="search" id="test-search" placeholder="Search..."
+                       style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; font-size: 16px;">
+            </div>
+            
+            <button type="button" style="padding: 0.5rem 1rem;">Test Button</button>
+        </form>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Instructions</h2>
+        <ul>
+            <li><strong>Desktop:</strong> Check that code blocks show proper 2-space indentation</li>
+            <li><strong>Mobile:</strong> Tap on the input fields and textarea - the page should NOT zoom in</li>
+            <li><strong>Mobile:</strong> Code blocks should be readable and properly formatted</li>
+        </ul>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Additional test for mobile zoom prevention
+        document.addEventListener('DOMContentLoaded', function() {
+            const testInputs = document.querySelectorAll('#test-input, #test-textarea, #test-email, #test-search');
+
+            testInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    console.log(`Focused on ${this.id}, font-size: ${window.getComputedStyle(this).fontSize}`);
+                });
+
+                input.addEventListener('touchstart', function() {
+                    console.log(`Touch started on ${this.id}`);
+                });
+            });
+
+            // Display current viewport settings
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                console.log('Viewport content:', viewport.getAttribute('content'));
+            }
+        });
+    </script>
+</body>
+</html>

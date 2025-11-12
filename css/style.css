@@ -25,6 +25,19 @@ body {
     line-height: 1.6;
     color: var(--off-white);
     background-color: var(--black);
+    /* Prevent zoom and ensure proper mobile behavior */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Additional mobile zoom prevention */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .container {
@@ -584,6 +597,164 @@ footer {
     50% {
         filter: drop-shadow(0 0 40px rgba(255, 149, 0, 0.8));
     }
+}
+
+/* Code blocks and pre-formatted text */
+pre, code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+pre {
+    background-color: var(--medium-gray);
+    border: 1px solid var(--light-gray);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    white-space: pre;
+    tab-size: 2 !important;
+    -moz-tab-size: 2 !important;
+    -o-tab-size: 2 !important;
+    -webkit-tab-size: 2 !important;
+}
+
+code {
+    background-color: var(--medium-gray);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    color: var(--primary-orange);
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: var(--off-white);
+}
+
+/* Chat message styling (if applicable) */
+.chat-message {
+    margin-bottom: 1rem;
+}
+
+.chat-message pre {
+    margin: 0.5rem 0;
+    background-color: var(--dark-gray);
+    border-left: 3px solid var(--primary-orange);
+}
+
+.chat-message code {
+    font-size: 0.85rem;
+}
+
+/* Enhanced zoom prevention for all input elements */
+input, textarea, select, [contenteditable="true"] {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    /* Additional properties to prevent zoom */
+    -webkit-user-select: text !important;
+    -webkit-touch-callout: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    /* Force hardware acceleration */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    /* Prevent zoom on touch */
+    touch-action: manipulation !important;
+}
+
+/* Target any dynamically created inputs (like chat widgets) */
+* input, * textarea, * select, * [contenteditable="true"] {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+}
+
+/* Specific targeting for mobile devices */
+@media screen and (max-width: 768px) {
+    input, textarea, select, [contenteditable="true"] {
+        font-size: 16px !important;
+        transform: translateZ(0) !important;
+        -webkit-transform: translateZ(0) !important;
+        /* Additional mobile-specific properties */
+        -webkit-user-select: text !important;
+        user-select: text !important;
+        touch-action: manipulation !important;
+    }
+
+    /* Prevent zoom on focus for all form elements */
+    input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+        zoom: 1 !important;
+        -webkit-zoom: 1 !important;
+        /* Force reflow to prevent zoom */
+        transform: translateZ(0) !important;
+        -webkit-transform: translateZ(0) !important;
+    }
+
+    /* Target third-party chat widgets and iframes */
+    iframe input, iframe textarea, iframe select, iframe [contenteditable="true"] {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100% !important;
+        transform: translateZ(0) !important;
+    }
+
+    /* Additional selectors for common chat widget patterns */
+    [class*="chat"] input, [class*="chat"] textarea,
+    [id*="chat"] input, [id*="chat"] textarea,
+    [class*="message"] input, [class*="message"] textarea,
+    [id*="message"] input, [id*="message"] textarea {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100% !important;
+        transform: translateZ(0) !important;
+    }
+}
+
+/* Re-enable text selection for input elements */
+input, textarea, select, [contenteditable="true"] {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+/* Global zoom prevention - catch-all for any missed elements */
+@media screen and (max-device-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+    }
+
+    /* Force minimum font size on all inputs to prevent zoom */
+    * {
+        -webkit-text-size-adjust: 100% !important;
+    }
+
+    /* Catch any input that might have been missed */
+    input[type="text"], input[type="email"], input[type="password"],
+    input[type="search"], input[type="tel"], input[type="url"],
+    input[type="number"], textarea, select {
+        font-size: 16px !important;
+        -webkit-appearance: none !important;
+        border-radius: 0 !important;
+        zoom: 1 !important;
+        -webkit-zoom: 1 !important;
+    }
+}
+
+/* Ensure consistent tab spacing across all elements */
+* {
+    -webkit-tab-size: 2;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
 }
 
 /* Responsive Design */
